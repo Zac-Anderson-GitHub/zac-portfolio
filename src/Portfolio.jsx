@@ -7,7 +7,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-tr from-indigo-50 via-white to-indigo-100 text-gray-800 font-sans">
       {/* 🔒 Hidden fallback form for Netlify detection */}
-      <form name="contact" netlify hidden>
+      <form name="contact" data-netlify="true" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
         <textarea name="message"></textarea>
