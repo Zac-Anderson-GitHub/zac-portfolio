@@ -4,6 +4,12 @@ export default function Portfolio() {
   const [showModal, setShowModal] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+  <form name="contact" netlify hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <textarea name="message"></textarea>
+  </form>;
+
   return (
     <div className="min-h-screen bg-gradient-to-tr from-indigo-50 via-white to-indigo-100 text-gray-800 font-sans">
       {/* Hero Section */}
