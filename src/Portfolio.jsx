@@ -4,6 +4,19 @@ export default function Portfolio() {
   const [showModal, setShowModal] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    })
+      .then(() => setFormSubmitted(true))
+      .catch((error) => alert("Form submission failed. Please try again."));
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-tr from-indigo-50 via-white to-indigo-100 text-gray-800 font-sans">
       {/* 🔒 Hidden fallback form for Netlify detection */}
@@ -187,12 +200,12 @@ export default function Portfolio() {
                   name="contact"
                   method="POST"
                   data-netlify="true"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setFormSubmitted(true);
-                  }}
+                  netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
                 >
                   <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="bot-field" />
+
                   <div className="space-y-4">
                     <input
                       type="text"
