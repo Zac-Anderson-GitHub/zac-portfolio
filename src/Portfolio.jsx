@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Navbar from "./components/Navbar";
+import { scrollIntoView } from "./utils/scrollIntoView";
 
 export default function Portfolio() {
   const [showModal, setShowModal] = useState(false);
@@ -33,17 +35,18 @@ export default function Portfolio() {
             Zac Anderson
           </h1>
           <p className="text-2xl font-light">Frontend Developer & Freelancer</p>
-          <a
-            href="#contact"
+          <button
             className="mt-6 inline-block bg-white text-purple-700 font-semibold py-2 px-6 rounded-full shadow hover:bg-purple-100 transition"
+            onClick={(e) => scrollIntoView(e, "contact")}
           >
             Let's Connect
-          </a>
+          </button>
+          <Navbar />
         </div>
       </section>
 
       {/* About Me */}
-      <section className="py-20 px-6 max-w-5xl mx-auto">
+      <section className="py-20 px-6 max-w-5xl mx-auto" id="about">
         <h2 className="text-4xl font-bold text-center mb-12 text-purple-700">
           About Me
         </h2>
@@ -62,7 +65,7 @@ export default function Portfolio() {
       </section>
 
       {/* Services */}
-      <section className="py-20 bg-indigo-50">
+      <section className="py-20 bg-indigo-50" id="services">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-12 text-purple-700">
             Services
@@ -99,7 +102,7 @@ export default function Portfolio() {
       </section>
 
       {/* Projects */}
-      <section className="py-20 px-6 max-w-5xl mx-auto">
+      <section className="py-20 px-6 max-w-5xl mx-auto" id="projects">
         <h2 className="text-4xl font-bold text-center mb-12 text-purple-700">
           Projects
         </h2>
@@ -138,7 +141,7 @@ export default function Portfolio() {
       </section>
 
       {/* Skills */}
-      <section className="py-20 bg-indigo-50">
+      <section className="py-20 bg-indigo-50" id="skills">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-12 text-purple-700">Skills</h2>
           <div className="flex flex-wrap justify-center gap-4">
