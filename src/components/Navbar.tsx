@@ -5,29 +5,29 @@ export default function Navbar() {
     <div className="flex items-center justify-center gap-8">
       <button
         className="text-white cursor-pointer"
-        onClick={(e) => {
-          scrollIntoView(e, "about");
+        onClick={() => {
+          scrollIntoView("about");
         }}
       >
         About Me
       </button>
       <button
         className="text-white cursor-pointer"
-        onClick={(e) => {
-          scrollIntoView(e, "services");
+        onClick={() => {
+          scrollIntoView("services");
         }}
       >
         Services
       </button>
       <button
         className="text-white cursor-pointer"
-        onClick={(e) => scrollIntoView(e, "projects")}
+        onClick={() => scrollIntoView("projects")}
       >
         Projects
       </button>
       <button
         className="text-white cursor-pointer"
-        onClick={(e) => scrollIntoView(e, "skills")}
+        onClick={() => scrollIntoView("skills")}
       >
         Skills
       </button>

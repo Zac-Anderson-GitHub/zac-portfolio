@@ -1,5 +1,4 @@
-export const scrollIntoView = (e, sectionId) => {
-  e.preventDefault();
+export const scrollIntoView = (sectionId) => {
   const sectionElement = document.getElementById(sectionId);
   if (sectionElement) {
     sectionElement.scrollIntoView({
